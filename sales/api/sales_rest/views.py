@@ -12,6 +12,7 @@ class AutomobileVOEncoder:
         "vin",
     ]
 
+
 class CustomerEncoder(ModelEncoder):
     model = Customer
     properties = [
@@ -42,6 +43,10 @@ class SaleEncoder(ModelEncoder):
         "salesperson": SalespersonEncoder(),
         "customer": CustomerEncoder(),
     }
+
+    def get_extra_data(self, o):
+        return super().get_extra_data(o)
+
 
 # Create your views here.
 @require_http_methods(["GET", "POST"])
@@ -80,7 +85,7 @@ def api_list_customers(request):
     if request.method == "GET":
         customer = Customer.objects.all()
         return JsonResponse(
-            customer,
+            {"customer": customer},
             encoder=CustomerEncoder,
         )
     else:
@@ -110,19 +115,19 @@ def api_customers(request, id):
 def api_list_sales(request, automobile_vo_id=None):
     if request.method == "GET":
         if automobile_vo_id is not None:
-            sales = Sale.objects.filter(automobile=automobile_vo_id)
+            sale = Sale.objects.filter(automobile=automobile_vo_id)
         else:
-            sales = Sale.objects.all()
+            sale = Sale.objects.all()
         return JsonResponse(
-            {"sales": sales},
-            encoder=SaleEncoder
+            {"sale": sale},
+            encoder=SaleEncoder,
         )
     else:
         content = json.loads(request.body)
         try:
-            automobile_href = f'/api/automobiles/{content["automobile"]}/'
+            automobile_href = f'/api/automobiles/{content["import_href"]}/'
             automobile = AutomobileVO.objects.get(import_href=automobile_href)
-            content["automobile"] = automobile
+            content["import_href"] = automobile
         except AutomobileVO.DoesNotExist:
             return JsonResponse(
                 {"message": "NOT VALID"}
