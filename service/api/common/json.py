@@ -34,7 +34,7 @@ class ModelEncoder(DateEncoder, QuerySetEncoder, JSONEncoder):
             for property in self.properties:
                 value = getattr(o, property)
                 if property in self.encoders:
-                    encoder = self.encoders[property]
+                    encoder = self.encoders[property]()
                     value = encoder.default(value)
                 d[property] = value
             d.update(self.get_extra_data(o))
