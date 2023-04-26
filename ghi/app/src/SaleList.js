@@ -9,8 +9,7 @@ function SaleList() {
 
         if (response.ok) {
             const data = await response.json();
-            console.log(data.sales, 'data')
-            setSales(data.sales);
+            setSales(data.sale);
         }
     };
 
