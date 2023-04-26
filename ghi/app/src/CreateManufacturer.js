@@ -21,22 +21,25 @@ function AddManufacturerForm() {
     };
 
     return (
+        <div className="container my-4">
+        <h2 className="text-center mb-4">Add Manufacturer</h2>
         <form onSubmit={handleSubmit}>
-        <div className="form-group">
+            <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
-            type="text"
-            className="form-control"
-            id="name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            required
+                type="text"
+                className="form-control"
+                id="name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                required
             />
-        </div>
-        <button type="submit" className="btn btn-primary">
+            </div>
+            <button type="submit" className="btn btn-primary btn-block mt-4">
             Create
-        </button>
+            </button>
         </form>
+        </div>
     );
 }
 

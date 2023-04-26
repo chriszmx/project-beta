@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const AutomobileList = () => {
-  const [automobiles, setAutomobiles] = useState([]);
+    const [automobiles, setAutomobiles] = useState([]);
 
-  useEffect(() => {
+    useEffect(() => {
         const fetchData = async () => {
         const automobileUrl = "http://localhost:8100/api/automobiles/";
         const response = await fetch(automobileUrl);
