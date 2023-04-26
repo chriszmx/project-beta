@@ -20,7 +20,7 @@ function ListManufacturers() {
         <div className="container my-4">
         <div className="row justify-content-center">
             <div className="col-md-8">
-            <h1 className="text-center mb-4">Manufacturers</h1>
+            <h1 className="text-center mb-4">Models</h1>
             <table className="table table-striped table-bordered">
                 <thead>
                 <tr>

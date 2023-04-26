@@ -7,6 +7,8 @@ import ServiceAppointments from './ListServiceAppointments';
 import CreateServiceAppointment from './CreateServiceAppointment';
 import ServiceHistory from './ServiceHistory';
 import ListManufacturers from './ListManufacturers';
+import AddManufacturerForm from './CreateManufacturer';
+import ModelList from './ListVehicle';
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +26,8 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/list-manufacturers" element={<ListManufacturers />} />
+          <Route path="/create-manufacturers" element={<AddManufacturerForm />} />
+          <Route path="/list-vehicle" element={<ModelList/>} />
         </Routes>
       </div>
     </BrowserRouter>
