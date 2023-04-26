@@ -6,6 +6,7 @@ import AddTechnician from './AddTechnician';
 import ServiceAppointments from './ListServiceAppointments';
 import CreateServiceAppointment from './CreateServiceAppointment';
 import ServiceHistory from './ServiceHistory';
+import ListManufacturers from './ListManufacturers';
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,9 @@ function App() {
           <Route path="/service-appointments" element={<ServiceAppointments />} />
           <Route path="/create-service" element={<CreateServiceAppointment />} />
           <Route path="/history-service" element={<ServiceHistory />} />
+        </Routes>
+        <Routes>
+          <Route path="/list-manufacturers" element={<ListManufacturers />} />
         </Routes>
       </div>
     </BrowserRouter>
