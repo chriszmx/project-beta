@@ -37,6 +37,7 @@ class AppointmentEncoder(ModelEncoder):
         'customer',
         'VIP',
         'technician',
+        'id',
     ]
 
     encoders = {

@@ -1,8 +1,5 @@
 from django.db import models
 from django.urls import reverse
-# from django.utils import timezone
-
-# Create your models here.
 
 
 class Status(models.Model):
@@ -72,3 +69,8 @@ class Appointment(models.Model):
         status = Status.objects.get(name="FINISHED")
         self.status = status
         self.save()
+
+    def get_api_url(self):
+        return reverse("list_appointments", kwargs={
+            "id": self.id,
+        })
