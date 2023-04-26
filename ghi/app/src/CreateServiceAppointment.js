@@ -44,7 +44,6 @@ function CreateServiceAppointment() {
                 date_time: "",
                 technician_id: "",
                 reason: "",
-                // VIP: false,
             });
         } else {
             alert("Failed to create service appointment.");
