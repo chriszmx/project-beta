@@ -2,9 +2,14 @@
 
 Team:
 
+<<<<<<< HEAD
 Chris Zambito *SERVICE*
 
 Charles Stephens *SALES*
+=======
+* Person 1 - Which microservice?
+* Charles S. - Sales
+>>>>>>> 79821db40f840c144c0ae148e5f6765114422e39
 
 ## Design
 
@@ -23,6 +28,8 @@ Automobile: Represents a specific automobile, identified by its VIN. Each Automo
 
 
 ## Sales microservice
+
+
 
 Explain your models and integration with the inventory
 microservice, here.
