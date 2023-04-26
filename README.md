@@ -24,5 +24,7 @@ Automobile: Represents a specific automobile, identified by its VIN. Each Automo
 
 ## Sales microservice
 
+
+
 Explain your models and integration with the inventory
 microservice, here.
