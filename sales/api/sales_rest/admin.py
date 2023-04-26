@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Customer, Sale, Salesperson, AutomobileVO
 
-# Register your models here.
+
 @admin.register(Salesperson)
 class SalespersonAdmin(admin.ModelAdmin):
     pass
@@ -15,5 +15,10 @@ class SaleAdmin(admin.ModelAdmin):
     pass
 
 @admin.register(AutomobileVO)
-class AutmobileVOAdmin(admin.ModelAdmin):
-    pass
+class AutomobileVOAdmin(admin.ModelAdmin):
+    list_display = (
+        "vin",
+    )
+    exclude = (
+        "import_href",
+    )
