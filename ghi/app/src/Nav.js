@@ -171,6 +171,17 @@ function Nav() {
                     Add Automobile
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    className="dropdown-item"
+                    to="/automobile/list"
+                    style={dropdownItemStyles}
+                    onMouseEnter={e => Object.assign(e.target.style, dropdownItemHoverStyles)}
+                    onMouseLeave={e => Object.assign(e.target.style, dropdownItemStyles)}
+                  >
+                    List Automobiles
+                  </NavLink>
+                </li>
               </ul>
             </li>
           </ul>

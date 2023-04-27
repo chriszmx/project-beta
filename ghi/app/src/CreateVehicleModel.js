@@ -1,64 +1,94 @@
 import React, { useState, useEffect } from "react";
 
-function ModelList () {
-    const [models, setModels] = useState([]);
-    const fetchData = async () => {
-    const modelsUrl = "http://localhost:8100/api/models/";
-    const response = await fetch(modelsUrl);
+function NewAutomobileModelForm () {
+    const [manufacturers, setManufacturer] = useState([]);
+    const [formData, setFormData] = useState({
+        name: '',
+        picture_url: '',
+        manufacturer_id: '',
+    });
 
-    if (response.ok) {
+    const handleFormChange = (event) => {
+        const value = event.target.value;
+        const inputName = event.target.name;
+        setFormData({
+        ...formData,
+        [inputName]: value,
+        });
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const automobileModelUrl = 'http://localhost:8100/api/models/';
+        const fetchConfig = {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+            'Content-Type': 'application.json'
+        },
+        };
+
+        const response = await fetch (automobileModelUrl, fetchConfig);
+        if (response.ok) {
+        setFormData({
+            name: '',
+            picture_url: '',
+            manufacturer_id: '',
+        });
+        }
+    }
+
+    const fetchManufacturer = async () => {
+        const manufacturerUrl = "http://localhost:8100/api/manufacturers/";
+        const response = await fetch(manufacturerUrl);
+        if (response.ok) {
         const data = await response.json();
-        setModels(data.models);
+        setManufacturer(data.manufacturers);
         }
     };
+
     useEffect(() => {
-        fetchData();
+        fetchManufacturer();
     }, []);
 
-    const deleteModel = async(id) => {
-        const modelUrl = `http://localhost:8100/api/models/${id}`;
-        const response = await fetch(modelUrl, {method: "DELETE"});
-        if (response.ok) {
-            setModels(models.filter(model => model.id !== id));
-        }
-    };
-
-
     return (
-        <div className="container my-4">
-        <div className="row">
-            <div className="col-12">
-                <h1 className="text-center mb-4">Automobile Models</h1>
-            <table className="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Manufacturer</th>
-                    <th>Picture</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody>
-                {models?.map(model => {
-                    return (
-                        <tr key={model.id}>
-                            <td>{model.name}</td>
-                            <td>{model.manufacturer.name}</td>
-                            <td>
-                                <img src={ model.picture_url } width="130" height="100" className="img-fluid"/>
-                            </td>
-                            <td>
-                                <button className="btn btn-secondary" onClick={() => deleteModel(model.id)}>Remove</button>
-                            </td>
-                        </tr>
-                    );
-                })}
-            </tbody>
-            </table>
+        <div className="my-5 container" style={{ maxWidth: "800px" }}>
+            <div className="row justify-content-center">
+            <form onSubmit={handleSubmit} id="create-automobile-model" className="col-md-8 col-lg-6 p-4 border rounded" style={{ background: "#f8f9fa" }}>
+                <h1 className="mb-3 text-center">New Model</h1>
+                <div className="row">
+                <div className="col">
+                    <div className="form-floating mb-3">
+                    <input onChange={handleFormChange} value={formData.name} required placeholder="name" type="text" id="name" name="name" className="form-control"/>
+                    <label htmlFor="name">Model Name</label>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="form-floating mb-3">
+                    <input onChange={handleFormChange} value={formData.picture_url} required placeholder="picture_url" type="url" id="picture_url" name="picture_url" className="form-control" />
+                    <label htmlFor="picture_url">Picture URL</label>
+                    </div>
+                </div>
+                <div className="mb-3">
+                    <select onChange={handleFormChange} value={formData.manufacturer_id} name="manufacturer_id" id="manufacturer_id" className="dropdownClasses form-select" required>
+                    <option value="">Choose a Manufacturer</option>
+                    {manufacturers.map(manufacturer => {
+                        return (
+                        <option key={manufacturer.id} value={manufacturer.id}>
+                            {manufacturer.name}
+                        </option>
+                        );
+                    })}
+                    </select>
+                </div>
+                </div>
+                <div className="d-grid">
+                <button className="btn btn-lg" type="submit" style={{ background: "linear-gradient(to right, #ff416c, #ff4b2b)", color: "white", border: "none", transition: "all 0.3s ease-in-out" }}>Create!</button>
+                </div>
+            </form>
+            </div>
         </div>
-        </div>
-    </div>
     );
 }
 
-export default ModelList;
+export default NewAutomobileModelForm;
