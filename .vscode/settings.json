@@ -1,8 +1,9 @@
 {
+<<<<<<< HEAD
+  "python.analysis.extraPaths": ["./service/api"]
+=======
     "python.analysis.extraPaths": [
         "./sales/api"
     ]
-}
-{
-  "python.analysis.extraPaths": ["./service/api"]
+>>>>>>> 79821db40f840c144c0ae148e5f6765114422e39
 }
