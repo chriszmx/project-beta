@@ -16,6 +16,7 @@ import ListManufacturers from './ListManufacturers';
 import AddManufacturerForm from './CreateManufacturer';
 import ModelList from './ListVehicle';
 import CreateVehicleModel from './CreateVehicleModel';
+import AutomobileForm from './CreateAutomobile';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/create-manufacturers" element={<AddManufacturerForm />} />
           <Route path="/list-vehicle" element={<ModelList/>} />
           <Route path="/create-model" element={<CreateVehicleModel />} />
+          <Route path="/automobile/form" element={<AutomobileForm />} />
         </Routes>
       </div>
     </BrowserRouter>

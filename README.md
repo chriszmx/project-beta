@@ -14,6 +14,8 @@ Charles Stephens *SALES*
 
 ## Service microservice
 
+**npm install react-boostrap to 3000
+
 Status: Represents the status of an appointment (e.g. "scheduled", "cancelled", "finished").
 Technician: Represents a technician who can be assigned to an appointment.
 AutomobileVO: Represents an automobile that has been scheduled for service. This model includes an import_href field, which could potentially be used to link to the corresponding record in the inventory service.
