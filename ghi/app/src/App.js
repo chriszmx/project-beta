@@ -27,7 +27,7 @@ function App() {
     return (
         <BrowserRouter>
         <Nav />
-        <div className="container">
+        <div className="border" style={{ backgroundColor: "", minHeight: "800px"}}>
             <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/salespeople" element={<ListSalesperson />} />
