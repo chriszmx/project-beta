@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 function AutomobileList () {
     const[automobiles, setAutomobiles] = useState([]);
     const fetchData = async () => {
@@ -31,7 +30,6 @@ function AutomobileList () {
     useEffect(() => {
         fetchData();
     }, []);
-
 
     return (
         <div className="container my-4">
