@@ -3,6 +3,9 @@
   "python.analysis.extraPaths": ["./service/api"]
 =======
     "python.analysis.extraPaths": [
+      "./service/api",
+      "./sales/api"
+    ],
         "./sales/api"
     ]
 >>>>>>> 79821db40f840c144c0ae148e5f6765114422e39

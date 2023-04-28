@@ -2,12 +2,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import Nav from './Nav';
 import Footer from './Footer';
-import SalespersonList from './SalespersonList';
-import CustomerList from './CustomerList';
-import SaleList from './SaleList';
-import CustomerForm from './CustomerForm';
-import SalespersonForm from './SalespersonFrom';
-import SaleForm from './RecordSale';
+import ListSalesperson from './ListSalesperson';
+import ListCustomer from './ListCustomer';
+import ListSale from './ListSale';
+import CreateCustomer from './CreateCustomer';
+import CreateSalesperson from './CreateSalesperson';
+import RecordSale from './RecordSale';
 import ListTechnicians from './ListTechnicians';
 import AddTechnician from './AddTechnician';
 import ServiceAppointments from './ListServiceAppointments';
@@ -21,6 +21,7 @@ import AutomobileForm from './CreateAutomobile';
 import AutomobileList from './ListAutomobiles';
 import './index.css';
 
+import SalespersonHistory from './SalespersonHistory';
 
 function App() {
   return (
@@ -29,12 +30,13 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/salespeople" element={<SalespersonList />} />
-          <Route path="/salespeople/new" element={<SalespersonForm />} />
-          <Route path="/customers" element={<CustomerList />} />
-          <Route path="/customers/new" element={<CustomerForm />} />
-          <Route path="/sales" element={<SaleList />} />
-          <Route path="/sales/new" element={<SaleForm />} />
+          <Route path="/salespeople" element={<ListSalesperson />} />
+          <Route path="/salespeople/new" element={<CreateSalesperson />} />
+          <Route path="/history-salesperson" element={<SalespersonHistory />} />
+          <Route path="/customers" element={<ListCustomer />} />
+          <Route path="/customers/new" element={<CreateCustomer />} />
+          <Route path="/sales" element={<ListSale />} />
+          <Route path="/sales/new" element={<RecordSale />} />
           <Route path="/list-technicians" element={<ListTechnicians />} />
           <Route path="/add-technicians" element={<AddTechnician />} />
           <Route path="/service-appointments" element={<ServiceAppointments />} />

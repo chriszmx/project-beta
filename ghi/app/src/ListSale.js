@@ -44,19 +44,15 @@ useEffect(() => {
               <th>Customer</th>
               <th>Automobile</th>
               <th>Price</th>
-              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             {sales.map((sale) => (
               <tr key={sale.id}>
-                <td>{sale.salesperson.employee_id}</td>
-                <td>{sale.customer.first_name}</td>
+                <td>{sale.salesperson.first_name} {sale.salesperson.last_name}</td>
+                <td>{sale.customer.first_name} {sale.customer.last_name}</td>
                 <td>{sale.automobile.vin}</td>
                 <td>{sale.price}</td>
-                <td>
-                <button onClick={(event) => {handleDelete(event, sale.id)}}>Delete</button>
-                </td>
               </tr>
             ))}
           </tbody>

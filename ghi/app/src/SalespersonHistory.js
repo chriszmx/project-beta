@@ -14,9 +14,11 @@ function SalespersonHistory(props) {
         setSalespeople(salespeopleData.salespeople);
         }
     };
+
     useEffect(() => {
         fetchData();
     }, []);
+
     useEffect(() => {
         if (props.sales && salesperson) {
             const filteredSales = props.sales.filter(sale => {
@@ -25,9 +27,13 @@ function SalespersonHistory(props) {
             setFilteredSales(filteredSales);
         }
     }, [props.sales, salesperson]);
+
     if (props.sales === undefined || props.salespeople === undefined) {
         return null;
     }
+
+
+
     return (
         <div className="container my-4">
         <div className="row">

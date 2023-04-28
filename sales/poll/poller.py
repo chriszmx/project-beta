@@ -17,8 +17,8 @@ def get_vin():
     content = json.loads(response.content)
     for automobile in content["autos"]:
         AutomobileVO.objects.update_or_create(
-            import_href=automobile['vin'],
-            defaults={"vin": automobile['vin']}
+            vin=automobile['vin'],
+            # defaults={"vin": automobile['vin']}
         )
 
 
@@ -29,7 +29,7 @@ def poll():
             get_vin()
         except Exception as e:
             print(e, file=sys.stderr)
-        time.sleep(60)
+        time.sleep(10)
 
 
 if __name__ == "__main__":

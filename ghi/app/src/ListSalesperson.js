@@ -43,7 +43,6 @@ useEffect(() => {
               <th>Employee ID</th>
               <th>First Name</th>
               <th>Last Name</th>
-              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -52,9 +51,6 @@ useEffect(() => {
                 <td>{salesperson.employee_id}</td>
                 <td>{salesperson.first_name}</td>
                 <td>{salesperson.last_name}</td>
-                <td>
-                <button onClick={(event) => {handleDelete(event, salesperson.id)}}>Delete</button>
-                </td>
               </tr>
             ))}
           </tbody>
