@@ -12,7 +12,12 @@ SERVICE -> Used bootstrap and inline css to customize the navbar, footer and mai
 
 ## Service microservice
 
-**Before starting application createsuperuser for :8080, in admin create statuses**
+
+WARNING PLEASE READ BEFORE STARTING APPLICATION WITH NO UPDATED DB
+
+**[docker volume create beta-data]**
+
+**Before starting application createsuperuser for 8080:8000, in admin create statuses**
 **********   [SCHEDULED]    [FINISHED]    [CANCELLED]   **********
 **-> OR -> creating service appointment will not work!**
 
