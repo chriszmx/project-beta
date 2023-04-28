@@ -1,7 +1,5 @@
-from django.shortcuts import render
-from common.json import ModelEncoder
 from service_rest.encoders import AppointmentEncoder, TechnicianEncoder
-from .models import Technician, Appointment, AutomobileVO, Status
+from .models import Technician, Appointment, AutomobileVO
 import json
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
