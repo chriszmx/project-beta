@@ -14,27 +14,7 @@ function Nav() {
               <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/salespeople">Salespeople</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/salespeople/new">New Salesperson</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/history-salesperson">Salesperson History</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/customers">Customers</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/customers/new">New Customer</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/sales">Sales</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/sales/new">Record a new Sale</NavLink>
-            </li>
-            <li>
+<<<<<<< HEAD
               <NavLink className="nav-link" to="/list-technicians">Technicians</NavLink>
             </li>
             <li className="nav-item">
@@ -57,6 +37,24 @@ function Nav() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/list-vehicle">Vehicles</NavLink>
+=======
+              <NavLink className="nav-link" to="/salespeople">Salespeople</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/salespeople/new">New Salesperson</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/customers">Customers</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/customers/new">New Customer</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/sales">Sales</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/sales/new">Record a new Sale</NavLink>
+>>>>>>> 79821db40f840c144c0ae148e5f6765114422e39
             </li>
           </ul>
         </div>
