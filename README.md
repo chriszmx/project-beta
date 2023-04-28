@@ -2,18 +2,15 @@
 
 Team:
 
-<<<<<<< HEAD
 Chris Zambito *SERVICE*
 
 Charles Stephens *SALES*
-=======
-* Person 1 - Which microservice?
-* Charles S. - Sales
->>>>>>> 79821db40f840c144c0ae148e5f6765114422e39
 
 ## Design
 
 ## Service microservice
+
+Before starting application createsuperuser for :8080, in admin create statuses SCHEDULED FINISHED CANCELLED
 
 **npm install react-boostrap to 3000
 

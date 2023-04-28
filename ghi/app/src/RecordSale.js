@@ -28,15 +28,19 @@ const handleFormChange = (event) => {
       },
     };
     const response = await fetch(saleUrl, config);
+    console.log(response.status);
     if (response.ok) {
       const newSale = await response.json();
       console.log(newSale);
-        setFormData({
-            customer: '',
-            salespeople: '',
-            automobile: '',
-            price: '',
-        })
+      setFormData({
+        customer: "",
+        salespeople: "",
+        automobile: "",
+        price: "",
+      });
+    } else {
+      const error = await response.text();
+      console.log(error);
     }
   };
     const fetchData = async () => {

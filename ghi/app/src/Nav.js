@@ -124,7 +124,7 @@ function Nav() {
                     onMouseEnter={e => Object.assign(e.target.style, dropdownItemHoverStyles)}
                     onMouseLeave={e => Object.assign(e.target.style, dropdownItemStyles)}
                   >
-                    Manufacturers
+                    Vehicle Models
                   </NavLink>
                 </li>
                 <li>
