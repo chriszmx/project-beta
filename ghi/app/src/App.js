@@ -7,7 +7,7 @@ import CustomerList from './CustomerList';
 import SaleList from './SaleList';
 import CustomerForm from './CustomerForm';
 import SalespersonForm from './SalespersonFrom';
-import SaleForm from './SaleForm';
+import SaleForm from './RecordSale';
 import ListTechnicians from './ListTechnicians';
 import AddTechnician from './AddTechnician';
 import ServiceAppointments from './ListServiceAppointments';
@@ -19,6 +19,7 @@ import ModelList from './ListVehicle';
 import CreateVehicleModel from './CreateVehicleModel';
 import AutomobileForm from './CreateAutomobile';
 import AutomobileList from './ListAutomobiles';
+import './index.css';
 
 
 function App() {

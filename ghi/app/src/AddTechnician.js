@@ -91,6 +91,3 @@ function AddTechnician() {
 }
 
 export default AddTechnician;
-
-
-// remove this so i can re commit 
