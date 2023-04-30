@@ -20,26 +20,83 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
             <li className="nav-item">
               <NavLink className="nav-link" exact={1} to="/">Home</NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/salespeople">Salespeople</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/salespeople/new">New Salesperson</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/customers">Customers</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/customers/new">New Customer</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/sales">Sales</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/sales/new">Record a new Sale</NavLink>
+
+            <li className="nav-item dropdown">
+              <NavLink className="nav-link dropdown-toggle" to="/sales" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sales
+              </NavLink>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown" style={{ backgroundColor: '#4b4e6d' }}>
+                <li>
+                  <NavLink
+                    className="dropdown-item"
+                    to="/salespeople"
+                    style={dropdownItemStyles}
+                    onMouseEnter={e => Object.assign(e.target.style, dropdownItemHoverStyles)}
+                    onMouseLeave={e => Object.assign(e.target.style, dropdownItemStyles)}
+                  >
+                    Salespeople
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="dropdown-item"
+                    to="/salespeople/new"
+                    style={dropdownItemStyles}
+                    onMouseEnter={e => Object.assign(e.target.style, dropdownItemHoverStyles)}
+                    onMouseLeave={e => Object.assign(e.target.style, dropdownItemStyles)}
+                  >
+                    New Salesperson
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="dropdown-item"
+                    to="/customers"
+                    style={dropdownItemStyles}
+                    onMouseEnter={e => Object.assign(e.target.style, dropdownItemHoverStyles)}
+                    onMouseLeave={e => Object.assign(e.target.style, dropdownItemStyles)}
+                  >
+                    Customers
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="dropdown-item"
+                    to="/customers/new"
+                    style={dropdownItemStyles}
+                    onMouseEnter={e => Object.assign(e.target.style, dropdownItemHoverStyles)}
+                    onMouseLeave={e => Object.assign(e.target.style, dropdownItemStyles)}
+                  >
+                    New Customer
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="dropdown-item"
+                    to="/sales"
+                    style={dropdownItemStyles}
+                    onMouseEnter={e => Object.assign(e.target.style, dropdownItemHoverStyles)}
+                    onMouseLeave={e => Object.assign(e.target.style, dropdownItemStyles)}
+                  >
+                    Sales
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="dropdown-item"
+                    to="/sales/new"
+                    style={dropdownItemStyles}
+                    onMouseEnter={e => Object.assign(e.target.style, dropdownItemHoverStyles)}
+                    onMouseLeave={e => Object.assign(e.target.style, dropdownItemStyles)}
+                  >
+                    Record a new Sale
+                  </NavLink>
+                </li>
+              </ul>
             </li>
 
             <li className="nav-item dropdown">
