@@ -13,6 +13,57 @@ code {
     monospace;
 }
 
-.main-page {
-  background-color: #ff0000;
+
+/* Create Service Appointment */
+
+.automobile-list-container {
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.automobile-list-heading {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.automobile-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.automobile-table th,
+.automobile-table td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.automobile-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.automobile-table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.automobile-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.automobile-image {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
