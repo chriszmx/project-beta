@@ -1,6 +1,8 @@
+import "./css/mainpage.css";
+
 function MainPage() {
   return (
-    <div className="container-fluid bg-dark text-light py-5 main-page vh-100">
+    <div className="bg-dark text-light py-5 main-page vh-100" style={{ padding: 0, margin: 0, }}>
       <div className="row justify-content-center">
         <div className="col-md-8 col-lg-6 text-center">
           <h1 className="display-2 fw-bold mb-4">CarCar</h1>
@@ -11,7 +13,7 @@ function MainPage() {
           <a href="http://localhost:3000/create-service" className="btn btn-outline-light btn-lg">Schedule Service</a>
         </div>
         <img src="https://www.bugatti.com/fileadmin/_processed_/sei/p1/se-image-a066c66221590dc956db8a4f6c77f0e8.webp"
-        alt="Car Image" />
+          alt="Car Image" />
       </div>
     </div>
   );

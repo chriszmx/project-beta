@@ -19,15 +19,14 @@ import ModelList from "./ListVehicle";
 import CreateVehicleModel from "./CreateVehicleModel";
 import AutomobileForm from "./CreateAutomobile";
 import AutomobileList from "./ListAutomobiles";
-import "./index.css";
-
 import SalespersonHistory from "./SalespersonHistory";
+import "./index.css";
 
 function App() {
     return (
         <BrowserRouter>
         <Nav />
-        <div className="border" style={{ backgroundColor: "", minHeight: "800px"}}>
+        <div style={{ backgroundColor: "", minHeight: "800px"}}>
             <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/salespeople" element={<ListSalesperson />} />
