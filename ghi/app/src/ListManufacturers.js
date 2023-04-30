@@ -17,28 +17,24 @@ function ListManufacturers() {
     }, []);
 
     return (
-        <div className="container my-4">
-        <div className="row justify-content-center">
-            <div className="col-md-8">
-            <h1 className="text-center mb-4">Models</h1>
-            <table className="table table-striped table-bordered">
-                <thead>
-                <tr>
-                    <th>Name</th>
+        <div className="manufacturers-container">
+        <h1 className="manufacturers-heading">Models</h1>
+        <table className="manufacturers-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            {manufacturers.map((manufacturer) => {
+                return (
+                <tr key={manufacturer.id}>
+                    <td>{manufacturer.name}</td>
                 </tr>
-                </thead>
-                <tbody>
-                {manufacturers.map((manufacturer) => {
-                    return (
-                    <tr key={manufacturer.id}>
-                        <td>{manufacturer.name}</td>
-                    </tr>
-                    );
-                })}
-                </tbody>
-            </table>
-            </div>
-        </div>
+                );
+            })}
+            </tbody>
+        </table>
         </div>
     );
 }
