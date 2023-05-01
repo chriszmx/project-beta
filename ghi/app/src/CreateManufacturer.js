@@ -21,7 +21,7 @@ function AddManufacturerForm() {
     };
 
     return (
-        <div className="container my-4">
+        <div className="add-manufacturer-form-container">
         <div className="card">
             <div className="card-header">
             <h2 className="text-center mb-0">Add Manufacturer</h2>

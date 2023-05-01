@@ -13,7 +13,6 @@ code {
     monospace;
 }
 
-
 /* Create Service Appointment */
 
 .automobile-list-container {
@@ -126,5 +125,190 @@ code {
 
   .manufacturers-table td {
     font-size: 0.9rem;
+  }
+}
+
+/* create manufacturer  */
+
+.add-manufacturer-form-container {
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.add-manufacturer-form-container .card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-manufacturer-form-container .card-header {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+.add-manufacturer-form-container .card-body {
+  padding: 20px;
+}
+
+.add-manufacturer-form-container .form-group {
+  margin-bottom: 20px;
+}
+
+.add-manufacturer-form-container label {
+  font-weight: bold;
+}
+
+.add-manufacturer-form-container .form-control {
+  border-radius: 5px;
+}
+
+.add-manufacturer-form-container .btn-primary {
+  background: linear-gradient(to right, #ff4b1f, #ff9068);
+  border-color: #ff4b1f;
+  border-radius: 5px;
+}
+
+.add-manufacturer-form-container .btn-primary:hover {
+  background: linear-gradient(to right, #ff9068, #ff4b1f);
+  border-color: #ff9068;
+}
+
+.add-manufacturer-form-container .btn-block {
+  width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .add-manufacturer-form-container .card-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .add-manufacturer-form-container .form-control {
+    font-size: 0.9rem;
+  }
+
+  .add-manufacturer-form-container .btn-primary {
+    font-size: 0.9rem;
+  }
+}
+
+/* list technicians */
+
+.technician-list-container {
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.technician-list-container h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.technician-list-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.technician-list-container th,
+.technician-list-container td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.technician-list-container th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.technician-list-container td:first-child {
+  font-weight: bold;
+}
+
+.technician-list-container .fire-button {
+  background-color: #ff4136;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.technician-list-container .fire-button:hover {
+  background-color: #ff1f00;
+}
+
+.technician-list-container .fire-button:focus {
+  outline: none;
+}
+
+.technician-list-container .fire-button.first-strike {
+  background-color: #0074d9;
+  animation-name: firstStrike;
+}
+
+.technician-list-container .fire-button.thin-ice {
+  background-image: linear-gradient(to bottom, #bfe9ff, #fff);
+  color: #0074d9;
+  animation-name: thinIce;
+}
+
+.technician-list-container .fire-button.fire {
+  background-image: linear-gradient(to bottom, #ff4136, #ff851b);
+  animation-name: fire;
+}
+
+@keyframes firstStrike {
+  0% {
+    background-color: #0074d9;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+  100% {
+    background-color: #0074d9;
+    transform: scale(1);
+  }
+}
+
+@keyframes thinIce {
+  0% {
+    background-image: linear-gradient(to bottom, #bfe9ff, #fff);
+    transform: rotate(0);
+  }
+  50% {
+    background-image: linear-gradient(to bottom, #bfe9ff, #fff);
+    transform: rotate(10deg);
+  }
+  100% {
+    background-image: linear-gradient(to bottom, #bfe9ff, #fff);
+    transform: rotate(0);
+  }
+}
+
+@keyframes fire {
+  0% {
+    background-image: linear-gradient(to bottom, #ff4136, #ff851b);
+    transform: rotate(0);
+  }
+  50% {
+    background-image: linear-gradient(to bottom, #ff4136, #ff851b);
+    transform: rotate(-10deg);
+  }
+  100% {
+    background-image: linear-gradient(to bottom, #ff4136, #ff851b);
+    transform: rotate(0);
   }
 }

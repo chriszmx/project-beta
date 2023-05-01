@@ -26,47 +26,63 @@ function TechnicianList() {
         fetchData();
     }, []);
 
-    return (
-            <div className="container my-4">
-            <div className="row">
-                <div className="col-12">
-                <h1 className="text-center mb-4">Technicians</h1>
-                <table className="table table-striped table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Employee ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {technicians?.map((technician) => {
-                        return (
-                        <tr key={technician.id}>
-                            <td>{technician.employee_id}</td>
-                            <td>{technician.first_name}</td>
-                            <td>{technician.last_name}</td>
-                            <td>
-                            <button
-                                className="btn btn-danger animate__animated animate__shakeX"
-                                onClick={() => {
-                                handleDeleteTechnician(technician.id);
-                                alert("You're fired! We can't have you running the dealership into the ground.");
-                                }}
-                            >
-                                FIRE!
-                            </button>
-                            </td>
-                        </tr>
-                        );
-                    })}
-                    </tbody>
-                </table>
-                </div>
-            </div>
-            </div>
+    const [buttonState, setButtonState] = useState("first-strike");
+
+    const handleFireTechnician = async (id) => {
+        if (buttonState === "first-strike") {
+        setButtonState("thin-ice");
+        } else if (buttonState === "thin-ice") {
+        setButtonState("fire");
+        } else if (buttonState === "fire") {
+        const result = window.confirm(
+            "You're fired! We can't have you running the dealership into the ground."
         );
+        if (result) {
+            handleDeleteTechnician(id);
+        }
+        }
+    };
+
+    return (
+        <div className="technician-list-container">
+        <h1>Technicians</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {technicians?.map((technician) => {
+                return (
+                <tr key={technician.id}>
+                    <td>{technician.employee_id}</td>
+                    <td>{technician.first_name}</td>
+                    <td>{technician.last_name}</td>
+                    <td>
+                    <button
+                        className={`fire-button animate__animated animate__shakeX ${buttonState}`}
+                        onClick={() => {
+                        handleFireTechnician(technician.id);
+                        }}
+                    >
+                        {buttonState === "first-strike"
+                        ? "First Strike"
+                        : buttonState === "thin-ice"
+                        ? "You Are on Thin Ice"
+                        : "Fire!"}
+                    </button>
+                    </td>
+                </tr>
+                );
+            })}
+            </tbody>
+        </table>
+        </div>
+    );
 }
 
 export default TechnicianList;
